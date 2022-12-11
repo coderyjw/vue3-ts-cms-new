@@ -1,5 +1,8 @@
 <template>
-  <h2>hello world</h2>
+  <h2>App</h2>
+  <router-link to="/login">login</router-link>
+  <router-link to="/main">main</router-link>
+  <router-view />
 </template>
 
 <script setup lang="ts"></script>
