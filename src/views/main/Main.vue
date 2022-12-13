@@ -1,5 +1,8 @@
 <template>
-  <div class="main">main</div>
+  <div class="main">
+    main
+    <el-button @click="handleExitClick">退出登录</el-button>
+  </div>
 </template>
 
 <script setup lang="ts">
