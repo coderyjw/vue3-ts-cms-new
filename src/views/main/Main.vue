@@ -1,19 +1,8 @@
 <template>
-  <div class="main">
-    <h2>main: {{ counterStore.counter }}</h2>
-    <button @click="changeCounter">修改counter</button>
-  </div>
+  <div class="main">main</div>
 </template>
 
-<script setup lang="ts">
-import useCounterStore from '@/store/counter'
-
-const counterStore = useCounterStore()
-
-const changeCounter = () => {
-  counterStore.changeCounterAction(99)
-}
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped>
 .main {
