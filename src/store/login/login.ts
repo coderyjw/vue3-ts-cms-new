@@ -6,6 +6,7 @@ import {
 } from '@/service/login/login'
 import type { IAccount } from '@/types'
 import { localCache } from '@/utils/cache'
+import { mapMenusToRoutes } from '@/utils/map-menus'
 import { LOGIN_TOKEN } from '@/global/constants'
 import router from '@/router'
 
@@ -45,6 +46,22 @@ const useLoginStore = defineStore('login', {
 
       // 5.页面跳转(main页面)
       router.push('/main')
+    },
+
+    loadLocalCacheAction() {
+      // 1.用户进行刷新默认加载数据
+      const token = localCache.getCache(LOGIN_TOKEN)
+      const userInfo = localCache.getCache('userInfo')
+      const userMenus = localCache.getCache('userMenus')
+      if (token && userInfo && userMenus) {
+        this.token = token
+        this.userInfo = userInfo
+        this.userMenus = userMenus
+
+        // 2.动态添加路由
+        const routes = mapMenusToRoutes(userMenus)
+        routes.forEach((route) => router.addRoute('main', route))
+      }
     }
   }
 })

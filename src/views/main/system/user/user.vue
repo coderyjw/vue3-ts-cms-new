@@ -1,13 +1,12 @@
 <template>
-  <div class="user">
-    <h2>user</h2>
-  </div>
+  <div class="user">用户管理</div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="less" scoped>
 .user {
-  color: red;
+  border-radius: 8px;
+  overflow: hidden;
 }
 </style>
