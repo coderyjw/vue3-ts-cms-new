@@ -9,8 +9,14 @@ import { localCache } from '@/utils/cache'
 import { LOGIN_TOKEN } from '@/global/constants'
 import router from '@/router'
 
+interface ILoginState {
+  token: string
+  userInfo: any
+  userMenus: any
+}
+
 const useLoginStore = defineStore('login', {
-  state: () => ({
+  state: (): ILoginState => ({
     token: localCache.getCache(LOGIN_TOKEN) ?? '',
     userInfo: localCache.getCache('userInfo') ?? {},
     userMenus: localCache.getCache('userMenus') ?? []
