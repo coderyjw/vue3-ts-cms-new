@@ -13,9 +13,11 @@ function loadLocalRoutes() {
       eager: true
     }
   )
+
   // 1.2.将加载的对象放到localRoutes
   for (const key in files) {
     const module = files[key]
+
     localRoutes.push(module.default)
   }
 
