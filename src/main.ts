@@ -9,6 +9,9 @@ import pinia from '@/store'
 
 import icons from './global/register-icons'
 
+
+
+
 const app = createApp(App)
 
 app.use(icons)
