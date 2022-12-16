@@ -7,9 +7,6 @@ import '@/assets/css/index.less'
 import router from '@/router'
 import pinia from '@/store'
 
-
-
-
 import icons from './global/register-icons'
 
 const app = createApp(App)
